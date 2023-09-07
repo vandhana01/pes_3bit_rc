@@ -85,6 +85,7 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
    - `read_verilog pes_3bit_rc.v`
    - `synth -top pes_3bit_rc`
    - `abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib`
+   - `write_verilog pes_3bit_rc_netlist.v`
    - `show`
      
 - OUTPUT     
@@ -109,4 +110,7 @@ https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 <img width="897" alt="image" src="https://github.com/vandhana01/pes_3bit_rc/assets/142392052/a1ae6519-8666-4c22-8049-0ca648191eb3">
 </p>
 
+<p align="center">
+<img width="897" alt="image" src="https://github.com/vandhana01/pes_3bit_rc/assets/142392052/571dfecf-1770-4d42-8f25-28b8df3112fc">
+</p>
   
