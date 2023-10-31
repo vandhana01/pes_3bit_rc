@@ -299,7 +299,23 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 ## Synthesis 
 - Synthesis is the process of translating the RTL design description into a gate-level representation using logic gates from a standard cell library.
 - `run_synthesis`
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/275496fc-45cc-42c8-af2d-dc8b9da0a840)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/8ffd768c-ab37-4e83-ad1e-6652bffee0a3)
   
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/1f4a27fc-7a8b-4859-9073-054081a7e75c)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/98e8c297-6f25-40d8-8a29-0d7f7b3f777d)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/07b90866-012c-460b-a8a7-a9d74f73f76a)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/e5cb9d3f-8459-4258-9dc2-dec5c2427b2e)
+
+
+
+
+
 ## Floorplan
 - The floorplanning stage involves defining the physical boundaries and locations of different functional blocks within the chip's die area.
 - Invoke floorplan using command `run_floorplan`
