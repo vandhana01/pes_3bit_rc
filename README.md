@@ -1,4 +1,4 @@
-# pes_3bit_rc
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/9ecf3d0f-38e6-476c-b64e-fa67fb9b387b)# pes_3bit_rc
 
 # 3-bit ring counter
 - A 3-bit ring counter is a type of digital sequential circuit in which a counter composed of flip-flops connected into a shift register, with the output of the last flip-flop fed to the input of the first, making a "circular" or "ring" structure.
@@ -291,28 +291,26 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
     - To run OpenLane in interactive mode, you can follow these general steps:
 ## Start Interactive Mode:
 - `./flow.tcl -interactive`
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/e19cdce6-e1ca-4d43-b790-bee91d9137ba)
+
+
 ## To prep the design type:
 - `prep -design openlane/<DESIGN_FOLDER_NAME> -tag <RUN_NAME>`
   
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/453ac90b-fb94-4222-bba4-a1a19e210f19)
 
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/d681d3fb-fd61-4932-8bc6-6be0efc30a76)
+
 ## Synthesis 
 - Synthesis is the process of translating the RTL design description into a gate-level representation using logic gates from a standard cell library.
 - `run_synthesis`
 
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/275496fc-45cc-42c8-af2d-dc8b9da0a840)
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/800bbdab-0760-4718-9270-32d04db01087)
 
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/8ffd768c-ab37-4e83-ad1e-6652bffee0a3)
-  
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/1f4a27fc-7a8b-4859-9073-054081a7e75c)
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/e50c83da-3cf0-428a-b1ec-27612eb1370a)
 
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/98e8c297-6f25-40d8-8a29-0d7f7b3f777d)
-
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/07b90866-012c-460b-a8a7-a9d74f73f76a)
-
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/e5cb9d3f-8459-4258-9dc2-dec5c2427b2e)
-
-
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/d397fa3c-57a3-40e4-b78b-40a9275f3024)
 
 
 
@@ -320,9 +318,22 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 - The floorplanning stage involves defining the physical boundaries and locations of different functional blocks within the chip's die area.
 - Invoke floorplan using command `run_floorplan`
 
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/b87ac62a-c8fb-4605-a5ed-22b3692d1c2b)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/5bd06a38-f5e4-4870-b365-e475718e2cb8)
+
+- view floorplan in Magic
+- `cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign magic -T sky130A.tech sky130_inv.mag &`
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/384c1c77-f649-485c-847d-9c507a49d3e6)
+  
+
 ## Placement
 - Placement is the process of determining the precise locations of individual standard cells within the defined floorplan.
 - Invoke placement using command `run_placement`
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/62b50b72-4fc6-4c39-9a60-a61ab99cbfe5)
+
 
 ## Clock Tree Synthesis
 - CTS focuses on the distribution of clock signals across the chip. It ensures that clock signals reach all flip-flops with minimal skew and balanced loads.
@@ -332,6 +343,7 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 - The routing stage involves the creation of metal interconnections to connect the pins of standard cells, forming the physical wires for data and control signals.
 - Invoke routing by `run_routing`
 
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/c441c06e-7bfa-4f61-b59b-f2818dd3dd01)
 
 
 </details>  
