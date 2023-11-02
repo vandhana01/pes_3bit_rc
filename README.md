@@ -29,6 +29,58 @@
 <img width="457" alt="image" src="https://github.com/vandhana01/pes_3bit_rc/assets/142392052/b8791429-5cb2-4e2a-8ac8-e55b11bca3a7">
 </p>
 
+- **VERILOG CODE**
+```
+module pes_3bit_rc(clk, ori, count);
+	input clk;
+	input ori;
+	output[2:0] count;
+	reg[2:0] temp;
+	always @(posedge clk or posedge ori)
+	begin
+		if(ori == 1)
+		begin 
+			temp <= 3'b100;
+		end
+		else
+			temp <= {temp[0], temp[2:1]};
+	end
+	assign count = temp;
+endmodule
+```
+
+- **TESTBENCH CODE**
+```
+`timescale 1ns/1ps
+module pes_3bit_rc_tb;
+	reg clk;
+	reg ori;
+	wire [2:0] count;
+	pes_3bit_rc rc(clk, ori, count);
+	initial
+	begin
+		clk = 0;
+		ori = 1;
+		#1000 $finish;
+	end
+	always
+	begin
+		#10;
+		clk = ~clk;
+	end
+	initial
+	begin
+		$dumpfile("pes_3bit.vcd");
+		$dumpvars(0, pes_3bit_rc_tb);
+		#20
+		ori = 0;
+		#200;
+		ori = 1;
+		#20
+		ori = 0;
+	end
+endmodule
+```
 ## Advantages and disadvantages 
 - Advantages and disadvantages of a 3-bit ring counter, as well as counters in general, depend on the specific application and requirements. Here are some general advantages and disadvantages:
 
@@ -70,9 +122,9 @@
 
 
 
-## ---------------------------------------IMPLEMENTATION----------------------------------------
+## --------------------------IMPLEMENTATION-----------------------------
 
-# ---     Simulation      ---
+# ***     Simulation      ***
 
 <details>
 <summary> Simulation </summary>
@@ -95,7 +147,7 @@
 
 </details>
 
-# ---      Synthesis      ---
+# ***     Synthesis      ***
 
 <details>
 <summary> Synthesis </summary>
@@ -125,7 +177,7 @@
 
 </details>
 
-# ---Gate-Level Simulation---
+# ***  Gate-Level Simulation  ***
 
 <details>
 <summary> Gate-Level Simulation </summary>
@@ -152,7 +204,7 @@
   
 </details>
 
-# ---   OpenLane flow     ---
+# ***   OpenLane flow     ***
 
 <details>
 <summary> OpenLane flow </summary>
@@ -201,7 +253,7 @@
 - With this updated config.json, OpenLane will recognize your Verilog source file and include it in the design flow when you run OpenLane for your design.
 - Remember to follow the OpenLane documentation and customize the design parameters in the `config.json` file as needed for your project.
 
-# -----Automated Mode-----
+# Automated Mode
 
 <details>
 <summary> Automated Mode </summary>
@@ -277,7 +329,7 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 
 </details>
 
-# -----Interactive Mode-----
+# Interactive Mode
 
 <details>
 <summary> Interactive Mode </summary>
