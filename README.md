@@ -1,4 +1,4 @@
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/9ecf3d0f-38e6-476c-b64e-fa67fb9b387b)# pes_3bit_rc
+# pes_3bit_rc
 
 # 3-bit ring counter
 - A 3-bit ring counter is a type of digital sequential circuit in which a counter composed of flip-flops connected into a shift register, with the output of the last flip-flop fed to the input of the first, making a "circular" or "ring" structure.
@@ -302,6 +302,13 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/d681d3fb-fd61-4932-8bc6-6be0efc30a76)
 
+- All the steps ran successfully
+- check the results folder
+- And respective .def files are found
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/2d681bd5-2071-4a35-905a-b543a69e7efb)
+
+  
 ## Synthesis 
 - Synthesis is the process of translating the RTL design description into a gate-level representation using logic gates from a standard cell library.
 - `run_synthesis`
@@ -334,10 +341,29 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/62b50b72-4fc6-4c39-9a60-a61ab99cbfe5)
 
+- To invoke magic tool type : `magic -T /home/vandhana/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_3bit_rc.def &`
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/428ca30d-8301-455b-ac16-0ecd5d06f152)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/d27b092b-4eef-483f-9ff0-d9b2693f7d51)
+
 
 ## Clock Tree Synthesis
 - CTS focuses on the distribution of clock signals across the chip. It ensures that clock signals reach all flip-flops with minimal skew and balanced loads.
 - Type the command `run_cts`
+
+
+- To invoke magic tool type : `magic -T /home/vandhana/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_3bit_rc.def &`
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/b822be10-ff25-49b5-aa2f-73ac95c68467)
+
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/0d80bf6c-c724-4408-8fe6-2706bef61314)
+
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/97cb78ec-c6ce-451b-b4d0-59c1fc512bc3)
+
+
   
 ## Routing
 - The routing stage involves the creation of metal interconnections to connect the pins of standard cells, forming the physical wires for data and control signals.
@@ -345,6 +371,11 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/c441c06e-7bfa-4f61-b59b-f2818dd3dd01)
 
+- To invoke magic tool type : `magic -T /home/vandhana/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_3bit_rc.def &`
+  
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/882e90df-2837-467e-91b1-1c3e7dd47d83)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/eedb5c70-bedd-453d-89a4-6313aed97272)
 
 </details>  
 </details>
