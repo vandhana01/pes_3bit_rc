@@ -111,7 +111,12 @@ endmodule
 </p>
 
 
-## Installation
+# Installation
+<details>
+<summary> Installation </summary>
+<br>
+	
+[](https://github.com/vandhana01/pes_asic_class#links-for-easy-navigaton)
 
 - https://github.com/kunalg123/riscv_workshop_collaterals/blob/master/run.sh
 - Download the run.sh
@@ -120,7 +125,100 @@ endmodule
 - ./run.sh
 -  For openlane installation : https://openlane.readthedocs.io/en/latest/getting_started/installation/installation_ubuntu.html
 
+### Prerequisites Installation - For (RTL2GDSII - OPENLANE)
 
+#### Magic Installation
+For magic installation please enter the following commands in the terminal.
+```
+sudo apt-get install m4
+sudo apt-get install tcsh
+sudo apt-get install csh
+sudo apt-get install libx11-dev
+sudo apt-get install tcl-dev tk-dev
+sudo apt-get install libcairo2-dev
+sudo apt-get install mesa-common-dev libglu1-mesa-dev
+sudo apt-get install libncurses-dev
+git clone https://github.com/RTimothyEdwards/magic
+cd magic
+./configure
+sudo make
+sudo make install
+```
+#### Ngspice Installation
+For ngspice installation please enter the following commands in the terminal.
+```
+sudo apt install ngspice
+```
+
+#### Openlane-2 Installation
+#### Installing the pre-requisites
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt install -y build-essential python3 python3-venv python3-pip make git
+```
+
+#### Uninstall conflicting packages of docker if present
+```
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+```
+
+#### Install Docker using apt repository
++ Setup Docker's apt repository
+```
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+```
++ Install other packages
+```
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
++ Verify that the Docker Engine installation is successful by running the hello-world image.
+```
+sudo docker run hello-world
+```
+
++ Making Docker available without root (Linux)
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo reboot # REBOOT!
+```
++ Checking the docker installation after reboot
+```
+docker run hello-world
+```
+
++ Checking Installation Requirements
+```
+git --version
+docker --version
+python3 --version
+python3 -m pip --version
+make --version
+python3 -m venv -h
+```
+#### Download and Install Openlane
+Run these one after the other
+```
+git clone --depth 1 https://github.com/The-OpenROAD-Project/OpenLane.git
+cd OpenLane/
+make
+make test
+```
+
+</details>
 
 ## --------------------------IMPLEMENTATION-----------------------------
 
@@ -326,6 +424,7 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 - All the steps are ran successfully
 - And the flow is completed
 
+- **NOTE: Checkout the below interactive mode for detiated explaination and screenshots !!**
 
 </details>
 
@@ -382,9 +481,10 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/5bd06a38-f5e4-4870-b365-e475718e2cb8)
 
 - view floorplan in Magic
-- `cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign magic -T sky130A.tech sky130_inv.mag &`
+- `magic -T /home/vandhana/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_3bit_rc.def &`
 
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/384c1c77-f649-485c-847d-9c507a49d3e6)
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/ecb4861a-9a47-490f-aa6d-17db4858cd46)
+
   
 
 ## Placement
@@ -395,9 +495,8 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 
 - To invoke magic tool type : `magic -T /home/vandhana/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_3bit_rc.def &`
 
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/428ca30d-8301-455b-ac16-0ecd5d06f152)
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/3210078f-d0db-4489-abb3-39d6155bb282)
 
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/d27b092b-4eef-483f-9ff0-d9b2693f7d51)
 
 
 ## Clock Tree Synthesis
@@ -410,11 +509,31 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/b822be10-ff25-49b5-aa2f-73ac95c68467)
 
 
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/0d80bf6c-c724-4408-8fe6-2706bef61314)
-
-
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/97cb78ec-c6ce-451b-b4d0-59c1fc512bc3)
 
+- The reports generated are given below
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/eca4533b-2fc9-4e94-b95a-909b7bb72529)
+  
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/898e5b74-eba2-42ff-9338-bdb93b778316)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/a30f074b-53a4-4fb7-9bfa-ac1cc515fcd4)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/9491c964-fcc6-42ec-ad9d-dfe84ec36d92)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/ae3d0daf-69c3-467c-bd0d-b0ec343db9f1)
+
+- Power report
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/1489ec38-0280-4a1c-9d69-ba95fa325675)
+
+- Skew Report
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/ac0cb465-d895-4e74-813b-c203fff99ca4)
+
+- summary
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/b030773e-779b-4e82-9af2-d4d4e21e0f09)
 
   
 ## Routing
@@ -428,6 +547,17 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/882e90df-2837-467e-91b1-1c3e7dd47d83)
 
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/eedb5c70-bedd-453d-89a4-6313aed97272)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/0de03b0a-c8d5-4ac3-a8c5-0d4a4f02f717)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/4303b861-b12e-4a82-bc73-54454c82b450)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/ea9608fb-414e-47f8-99e6-11833361b5bc)
+
+
+- manufacturability.rpt
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/04a02ec6-9c71-488e-8c63-6e6360f199ea)
 
 </details>  
 </details>
