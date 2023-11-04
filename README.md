@@ -222,7 +222,7 @@ make test
 
 ## --------------------------IMPLEMENTATION-----------------------------
 
-# ***     Simulation      ***
+#    Simulation    
 
 <details>
 <summary> Simulation </summary>
@@ -245,7 +245,7 @@ make test
 
 </details>
 
-# ***     Synthesis      ***
+#      Synthesis      
 
 <details>
 <summary> Synthesis </summary>
@@ -275,7 +275,7 @@ make test
 
 </details>
 
-# ***  Gate-Level Simulation  ***
+#  Gate-Level Simulation  
 
 <details>
 <summary> Gate-Level Simulation </summary>
@@ -302,7 +302,7 @@ make test
   
 </details>
 
-# ***   OpenLane flow     ***
+#   OpenLane flow     
 
 <details>
 <summary> OpenLane flow </summary>
@@ -558,6 +558,23 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 - manufacturability.rpt
 
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/04a02ec6-9c71-488e-8c63-6e6360f199ea)
+
+# Statistics
+
+## **Area**
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/ca6c1369-4b6e-4fb4-b92a-f2880847f03f)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/60e76faa-2d3d-40e0-b3c2-aa5ae46d1f78)
+  
+## **Power**
+- Internal Power = 5.38e-05 W
+- Switching Power = 1.10e-05 W
+- Leakage Power = 1.25e-09  W 
+- Total Power = 6.49e-05 W
+- watts = 100%
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/23639330-8edd-4e8d-a9b3-7895c5a25f83)
 
 </details>  
 </details>
