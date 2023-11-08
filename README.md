@@ -353,11 +353,6 @@ make test
 
 # Automated Mode
 
-<details>
-<summary> Automated Mode </summary>
-<br>
-	
-[](https://github.com/vandhana01/pes_asic_class#links-for-easy-navigaton)
 
   
 ## Running an automated flow 
@@ -426,15 +421,10 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 
 - **NOTE: Checkout the below interactive mode for detiated explaination and screenshots !!**
 
-</details>
+
 
 # Interactive Mode
 
-<details>
-<summary> Interactive Mode </summary>
-<br>
-	
-[](https://github.com/vandhana01/pes_asic_class#links-for-easy-navigaton)
 
 ## Running in interactive mode
 - OpenLane can also be used interactively, where users can intervene at various stages of the design flow to make manual adjustments, explore design trade-offs, or address specific issues.
@@ -546,7 +536,12 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
   
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/882e90df-2837-467e-91b1-1c3e7dd47d83)
 
-![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/eedb5c70-bedd-453d-89a4-6313aed97272)
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/4d6c6fd1-06d2-4ca8-99cd-9ba86c0f503d)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/60e7c75f-4338-48c4-9e38-3a4f804fec47)
+
+![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/3d270e0c-8c86-4e70-a89a-79b15d6b75a9)
+
 
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/0de03b0a-c8d5-4ac3-a8c5-0d4a4f02f717)
 
@@ -576,5 +571,5 @@ This configuration is tailored to the "pes_3bit_rc" design and should be adjuste
 
 ![image](https://github.com/vandhana01/pes_3bit_rc/assets/142392052/23639330-8edd-4e8d-a9b3-7895c5a25f83)
 
-</details>  
+
 </details>
